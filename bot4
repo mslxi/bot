@@ -16,4 +16,4 @@ EOF
 
 cd /root/bot/4
 docker-compose up -d
-docker exec -it 4-pagermaid-4 bash utils/docker-config.sh
+docker exec -it 4-pagermaid-1 bash utils/docker-config.sh
