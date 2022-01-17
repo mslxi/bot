@@ -1,8 +1,8 @@
 #! /bin/bash
 mkdir -p /root/bot/1
 cd /root/bot/1
-git clone https://github.com/Xtao-Labs/PagerMaid-Modify /root/bot/1/PagerMaid-Modify
-cd /root/bot/1/PagerMaid-Modify
-cp docker-compose.gen.yml docker-compose.yml
+git clone https://github.com/Xtao-Labs/PagerMaid-Modify /root/bot/pagermaid
+wget https://raw.githubusercontent.com/mslxi/bot/main/docker-compsoe.yml -O /root/bot/1/docker-compose.yml
+cd /root/bot/1/
 docker-compose up -d
 docker exec -it pagermaid bash utils/docker-config.sh
