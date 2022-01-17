@@ -7,7 +7,7 @@ services:
   pagermaid:
     image: mrwangzhe/pagermaid_modify
     restart: always
-    container_name: pagermaid3
+    container_name: pagermaid4
     hostname: pagermaid
     #ports:
       #- "3333:3333"
