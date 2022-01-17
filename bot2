@@ -1,7 +1,7 @@
 #! /bin/bash
 cp -r /root/bot/1 /root/bot/2
 
-tee /roo/bot/2/PagerMaid-Modify/docker-compose.yml << 'EOF'
+tee /root/bot/2/PagerMaid-Modify/docker-compose.yml << 'EOF'
 version: "2.0"
 services:
   pagermaid:
