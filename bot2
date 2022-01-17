@@ -1,21 +1,8 @@
 #! /bin/bash
-cp -r /root/bot/1 /root/bot/2
-
-tee /root/bot/2/PagerMaid-Modify/docker-compose.yml << 'EOF'
-version: "2.0"
-services:
-  pagermaid:
-    image: mrwangzhe/pagermaid_modify
-    restart: always
-    hostname: pagermaid
-    #ports:
-      #- "3333:3333"
-    volumes:
-      - /root/bot/2/PagerMaid-Modify:/pagermaid/workdir
-    environment:
-      - RUN_AS_ROOT=true
-EOF
-
-cd /root/bot/2/PagerMaid-Modify
+mkdir -p /root/bot/1
+cd /root/bot/1
+git clone https://github.com/Xtao-Labs/PagerMaid-Modify /root/bot/pagermaid
+wget https://raw.githubusercontent.com/mslxi/bot/main/docker-compsoe.yml -O /root/bot/1/docker-compose.yml
+cd /root/bot/1/
 docker-compose up -d
-docker exec -it pagermaid2 bash utils/docker-config.sh
+docker exec -it 1-pagermaid-1 bash utils/docker-config.sh
