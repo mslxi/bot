@@ -1,6 +1,19 @@
 #! /bin/bash
 mkdir -p /root/bot/2
-wget https://raw.githubusercontent.com/mslxi/bot/main/docker-compsoe.yml -O /root/bot/2/docker-compose.yml
-cd /root/bot/2/
+cp -r /root/bot/pagermaid /root/bot/2
+
+tee /root/bot/2/docker-compose.yml << 'EOF'
+version: "2.0"
+services:
+  pagermaid:
+    image: mrwangzhe/pagermaid_modify
+    restart: always
+    volumes:
+      - /root/bot/2/pagermaid:/pagermaid/workdir
+    environment:
+      - RUN_AS_ROOT=true
+EOF
+
+cd /root/bot/2
 docker-compose up -d
-docker exec -it 1-pagermaid-1 bash utils/docker-config.sh
+docker exec -it 2-pagermaid-2 bash utils/docker-config.sh
