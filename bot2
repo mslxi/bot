@@ -2,9 +2,8 @@
 mkdir -p /root/bot/2
 cd /root/bot/2
 git clone https://github.com/Xtao-Labs/PagerMaid-Modify /root/bot/2/PagerMaid-Modify
-touch /roo/bot/2/PagerMaid-Modify/docker-compose.yml
 
-tee /roo/bot/2/PagerMaid-Modify/docker-compose.yml << 'EOF'
+tee /roo/bot/2/PagerMaid-Modify/docker-compose.gen.yml << 'EOF'
 version: "2.0"
 services:
   pagermaid:
@@ -22,6 +21,7 @@ services:
       - PGID=917
 EOF
 
+mv /root/bot/2/PagerMaid-Modify/docker-compose.gen.yml /root/bot/2/PagerMaid-Modify/docker-compose.yml
 cd /root/bot/2/PagerMaid-Modify
 docker-compose up -d
 docker exec -it pagermaid2 bash utils/docker-config.sh
