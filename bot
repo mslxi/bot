@@ -1,3 +1,4 @@
+#! /bin/bash
 mkdir -p /root/bot/1
 cd /root/bot/1
 git clone https://github.com/Xtao-Labs/PagerMaid-Modify /root/bot/1/PagerMaid-Modify
