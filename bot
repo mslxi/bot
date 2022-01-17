@@ -5,4 +5,4 @@ git clone https://github.com/Xtao-Labs/PagerMaid-Modify /root/bot/pagermaid
 wget https://raw.githubusercontent.com/mslxi/bot/main/docker-compsoe.yml -O /root/bot/1/docker-compose.yml
 cd /root/bot/1/
 docker-compose up -d
-docker exec -it pagermaid bash utils/docker-config.sh
+docker exec -it 1-pagermaid-1 bash utils/docker-config.sh
