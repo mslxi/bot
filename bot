@@ -1,0 +1,7 @@
+mkdir -p /root/bot/1
+cd /root/bot/1
+git clone https://github.com/Xtao-Labs/PagerMaid-Modify /root/bot/1/PagerMaid-Modify
+cd /root/bot/1/PagerMaid-Modify
+cp docker-compose.gen.yml docker-compose.yml
+docker-compose up -d
+docker exec -it pagermaid bash utils/docker-config.sh
