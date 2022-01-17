@@ -1,0 +1,24 @@
+#! /bin/bash
+cp -r /root/bot/1 /root/bot/4
+
+tee /root/bot/4/PagerMaid-Modify/docker-compose.yml << 'EOF'
+version: "2.0"
+services:
+  pagermaid:
+    image: mrwangzhe/pagermaid_modify
+    restart: always
+    container_name: pagermaid3
+    hostname: pagermaid
+    #ports:
+      #- "3333:3333"
+    volumes:
+      - ./:/pagermaid/workdir
+    environment:
+      - RUN_AS_ROOT=true
+      - PUID=917
+      - PGID=917
+EOF
+
+cd /root/bot/4/PagerMaid-Modify
+docker-compose up -d
+docker exec -it pagermaid4 bash utils/docker-config.sh
