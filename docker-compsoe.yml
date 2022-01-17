@@ -1,0 +1,9 @@
+version: "2.0"
+services:
+  pagermaid:
+    image: mrwangzhe/pagermaid_modify
+    restart: always
+    volumes:
+      - /root/bot/pagermaid:/pagermaid/workdir
+    environment:
+      - RUN_AS_ROOT=true
