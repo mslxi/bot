@@ -1,6 +1,6 @@
 #! /bin/bash
 mkdir -p /root/bot/1
-git clone https://github.com/Xtao-Labs/PagerMaid-Modify /root/bot/pagermaid
+git clone https://gitlab.com/Xtao-Labs/pagermaid-modify /root/bot/pagermaid
 cp -r /root/bot/pagermaid /root/bot/1
 
 tee /root/bot/1/docker-compose.yml << 'EOF'
